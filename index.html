@@ -7,18 +7,21 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="index.css">
   
-  <title> Advice generator app</title>
+  <title>                                                                                                                                                      Advice generator app</title>
 </head>
 <body>
   <div class="advice-container">
     <div class="advice-wrapper">
+      <p class="error"></p>
       <p class="advice-id">Advice #117</p>
-      <p class="advice">"It is easy to sit up and take notice, whats difficult is getting up and taking action."</p>
+      <p class="advice"></p>
       <img src="./images/pattern-divider-desktop.svg" alt="" class="divider">
-      <div class="dice">
-        <img src="./images/icon-dice.svg" alt="">
+      <div class="dice" onclick="getAdvice()">
+        <img src="./images/icon-dice.svg" alt="" class="dice-main"> 
       </div>
     </div>
   </div>
+
+  <script src="./script.js"></script>
 </body>
 </html>
