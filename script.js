@@ -1,7 +1,8 @@
 let adviceId = document.querySelector('.advice-id')
 let advice = document.querySelector('.advice')
 let dice = document.querySelector('.dice-main')
-let diceError = document.querySelector('.error')
+let error = document.querySelector('.error');
+
 
 async function getAdvice(){
     try {
@@ -12,12 +13,17 @@ async function getAdvice(){
 
         let dataAdvice = data.slip.advice;
         let dataId = data.slip.id;
+
         adviceId.innerHTML = `Advice #${dataId}`;
         advice.innerHTML = `<p>${dataAdvice}</p>`;
-        console.log(dataId);
-        console.log(dataAdvice);
+
+        
+        
     } catch (error) {
-        diceError.innerHTML = 'Please check your internet connection'
+    //     let errorMessage = "<h1>Something went wrong!</h1>";
+    //   let errorElement = document.getElementsByClassName('error')[0];
+    //   errorElement.innerHTML = errorMessage;
+    console.log('Check Your Internet Connection')
     }
 }
 

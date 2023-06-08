@@ -57,7 +57,7 @@ body{
     display: block;
 }
 
-.error{
+.error h1{
     font-size: 17px;
     font-weight: 800;
     color: red;
