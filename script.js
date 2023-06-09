@@ -1,10 +1,12 @@
 let adviceId = document.querySelector('.advice-id')
 let advice = document.querySelector('.advice')
 let dice = document.querySelector('.dice-main')
-let error = document.querySelector('.error');
+let errorMessage;
+let errorElement;
 
 
 async function getAdvice(){
+    
     try {
         let timestamp = Date.now(); // Get current timestamp
         let url = `https://api.adviceslip.com/advice?timestamp=${timestamp}`; // Append timestamp as a query parameter
@@ -17,13 +19,18 @@ async function getAdvice(){
         adviceId.innerHTML = `Advice #${dataId}`;
         advice.innerHTML = `<p>${dataAdvice}</p>`;
 
+        if(errorElement !== undefined){
+            errorElement.innerHTML = "";
+        }else{
+            return
+        }
         
         
-    } catch (error) {
-    //     let errorMessage = "<h1>Something went wrong!</h1>";
-    //   let errorElement = document.getElementsByClassName('error')[0];
-    //   errorElement.innerHTML = errorMessage;
-    console.log('Check Your Internet Connection')
+    }catch(error) {
+        errorMessage = "<h1>Something went wrong!</h1>";
+        errorElement = document.getElementsByClassName('error')[0];
+        errorElement.innerHTML = errorMessage;
+        console.log('Check Your Internet Connection')
     }
 }
 
