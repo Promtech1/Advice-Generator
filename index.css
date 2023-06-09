@@ -24,6 +24,7 @@ body{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    
     gap: 1em;
     position: relative;
 }
@@ -89,5 +90,15 @@ marquee{
 @media screen and (max-width: 448px){
     .advice-wrapper{
         padding:3em 9%;
+    }
+}
+
+@media screen and (max-width: 406px){
+    .advice-container{
+        min-height: -webkit-fill-available;
+    }
+
+    .advice-wrapper{
+        margin-top: 50%;
     }
 }
